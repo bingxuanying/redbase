@@ -1,4 +1,4 @@
-// File:            redbase.h
+// File:            pf_manager.h
 // Description:     handles the creation, deletion, opening, and 
 //                  closing of paged files, along with the allocation
 //                  and disposal of scratch pages.

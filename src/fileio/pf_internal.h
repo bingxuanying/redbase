@@ -1,4 +1,4 @@
-// File:            redbase.h
+// File:            pf_internal.h
 // Description:     declarations internal to the paged file component
 // Author:          Bingxuan Ying
 // 
@@ -10,5 +10,7 @@
 // PageNum: identifie a page in file
 //
 typedef int PageNum;
+
+
 
 # endif
