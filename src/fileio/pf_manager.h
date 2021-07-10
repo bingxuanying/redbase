@@ -8,8 +8,7 @@
 #ifndef PF_MANAGER_H
 #define PF_MANAGER_H
 
-#include "redbase.h"
-#include "pf_filehandle.h"
+#include "pf.h"
 
 class PF_Manager {
 public:
@@ -29,6 +28,9 @@ public:
     RC AllocateBlock (char *&buffer);
     // Dispose of a scratch page
     RC DisposeBlock  (char *buffer);
+
+private:
+    PF_BufferMgr *pBufferMgr;                      // page-buffer manager
 };
 
 #endif

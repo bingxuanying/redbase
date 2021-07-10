@@ -1,21 +1,20 @@
+// 
 // File:            pf_filehandle.h
 // Description:     provides access to the pages of an open file.
 // Author:          Bingxuan Ying
 //
 
-#ifndef PF_PF_FileHandle_H
-#define PF_PF_FileHandle_H
+#ifndef PF_FileHandle_H
+#define PF_FileHandle_H
 
-#include "redbase.h"
-#include "pf_pagehandle.h"
-#include "pf_internal.h"
+#include "pf.h"
 
 const int ALL_PAGES = -1;
 
 class PF_FileHandle {
 public:
-    PF_FileHandle  ();                         // Default constructor
-    ~PF_FileHandle ();                         // Destructor
+    PF_FileHandle  ();                              // Default constructor
+    ~PF_FileHandle ();                              // Destructor
 
     // Copy constructor
     PF_FileHandle  (const PF_FileHandle &PF_FileHandle);
@@ -44,6 +43,18 @@ public:
     RC UnpinPage      (PageNum pageNum) const;
     // Write dirty page(s) to disk  
     RC ForcePages     (PageNum pageNum = ALL_PAGES) const;
+    
+private:
+
+    // IsValidPageNum will return TRUE if page number is valid and FALSE
+    // otherwise
+    int IsValidPageNum (PageNum pageNum) const;
+
+    PF_BufferMgr *pBufferMgr;                      // pointer to buffer manager
+    PF_FileHdr hdr;                                // file header
+    int bFileOpen;                                 // file open flag
+    int bHdrChanged;                               // dirty flag for file hdr
+    int unixfd;                                    // OS file descriptor
 };
 
 #endif

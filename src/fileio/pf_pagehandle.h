@@ -1,13 +1,13 @@
+// 
 // File:            pf_pagehandle.h
 // Description:     provides access to the contents of a given page.
 // Author:          Bingxuan Ying
 //
 
-#ifndef PF_PF_PageHandle_H
-#define PF_PF_PageHandle_H
+#ifndef PF_PageHandle_H
+#define PF_PageHandle_H
 
-#include "redbase.h"
-#include "pf_internal.h"
+#include "pf.h"
 
 class PF_PageHandle {
 public:
@@ -22,6 +22,10 @@ public:
     RC GetData        (char *&pData) const;
 	// Return the page number
     RC GetPageNum     (PageNum &pageNum) const;
+
+private:
+    int  pageNum;                                  // page number
+    char *pPageData;                               // pointer to page data
 };
 
 #endif
