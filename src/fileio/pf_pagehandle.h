@@ -7,8 +7,6 @@
 #ifndef PF_PageHandle_H
 #define PF_PageHandle_H
 
-#include "pf.h"
-
 class PF_PageHandle {
 public:
     PF_PageHandle  ();                          // Default constructor

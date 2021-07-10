@@ -10,8 +10,6 @@
 
 #include "redbase.h"
 #include "pf_manager.h"
-#include "pf_filehandle.h"
-#include "pf_pagehandle.h"
 
 //
 // PageNum: identifie a page in file
@@ -36,9 +34,24 @@ struct PF_FileHdr {
 };
 
 //
+// PF_PageHandle: PF page interface
+//
+class PF_PageHandle;
+
+//
 // PF_FileHandle: PF File interface
 //
+class PF_FileHandle;
+
+//
+// PF_BufferMgr: PF page buffer manger
+//
 class PF_BufferMgr;
+
+//
+// PF_Manager: provides PF file management
+//
+class PF_Manager;
 
 //
 // Print-error function and PF return code defines

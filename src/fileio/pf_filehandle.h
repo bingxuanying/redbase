@@ -7,10 +7,6 @@
 #ifndef PF_FileHandle_H
 #define PF_FileHandle_H
 
-#include "pf.h"
-
-const int ALL_PAGES = -1;
-
 class PF_FileHandle {
 public:
     PF_FileHandle  ();                              // Default constructor
@@ -43,9 +39,8 @@ public:
     RC UnpinPage      (PageNum pageNum) const;
     // Write dirty page(s) to disk  
     RC ForcePages     (PageNum pageNum = ALL_PAGES) const;
-    
-private:
 
+private:
     // IsValidPageNum will return TRUE if page number is valid and FALSE
     // otherwise
     int IsValidPageNum (PageNum pageNum) const;

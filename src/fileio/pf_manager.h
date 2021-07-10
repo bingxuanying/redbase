@@ -8,8 +8,6 @@
 #ifndef PF_MANAGER_H
 #define PF_MANAGER_H
 
-#include "pf.h"
-
 class PF_Manager {
 public:
     PF_Manager    ();                           // Constructor
